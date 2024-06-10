@@ -1,6 +1,6 @@
 import { toast } from "react-toastify";
 
-const Step1 = ({ setData, data, setPage, page }) => {
+const Step1 = ({ setData, data, setPage }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (data.password === data.confirmPassword) {
@@ -10,6 +10,7 @@ const Step1 = ({ setData, data, setPage, page }) => {
       toast.error("Verification false");
     }
   };
+
   return (
     <form onSubmit={handleSubmit}>
       <label htmlFor="login" className="mb-1 block">

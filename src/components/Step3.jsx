@@ -1,6 +1,6 @@
 import { toast } from "react-toastify";
 
-const Step3 = ({ setData, data, page, setPage }) => {
+const Step3 = ({ setData, data, setPage }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (

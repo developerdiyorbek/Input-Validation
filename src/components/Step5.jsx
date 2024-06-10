@@ -1,6 +1,6 @@
 import { toast } from "react-toastify";
 
-const Step5 = ({ setData, data, page, setPage }) => {
+const Step5 = ({ setData, data, setPage }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (data.login !== "" && data.password !== "") {
@@ -10,6 +10,7 @@ const Step5 = ({ setData, data, page, setPage }) => {
       toast.error("verification false");
     }
   };
+
   return (
     <form onSubmit={handleSubmit}>
       <h2>Step 5 - consent to Personal Data Processing</h2>

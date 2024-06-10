@@ -1,6 +1,6 @@
 import { toast } from "react-toastify";
 
-const Step2 = ({ setData, data, page, setPage }) => {
+const Step2 = ({ setData, data, setPage }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (data.date !== "") {
@@ -10,6 +10,7 @@ const Step2 = ({ setData, data, page, setPage }) => {
       toast.error("Select one option");
     }
   };
+
   return (
     <form onSubmit={handleSubmit}>
       <label htmlFor="selection" className="mb-2 block">

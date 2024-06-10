@@ -2,7 +2,7 @@ import Cleave from "cleave.js/react";
 import { useState } from "react";
 import { toast } from "react-toastify";
 
-const Step4 = ({ setData, data, setPage, page }) => {
+const Step4 = ({ setData, data, setPage }) => {
   const [creditType, setCreditType] = useState(null);
 
   const imageData = [
