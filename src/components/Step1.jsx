@@ -48,7 +48,6 @@ const Step1 = ({ setData, data, setPage }) => {
         id="confirmpassword"
         placeholder="Confirm your password"
       />
-
       <button
         className={
           "rounded border-none bg-[#0C6DFD] p-2 text-lg text-white outline-none"

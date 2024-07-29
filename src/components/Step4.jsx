@@ -1,28 +1,10 @@
 import Cleave from "cleave.js/react";
 import { useState } from "react";
 import { toast } from "react-toastify";
+import { imageData } from "../constants/data";
 
 const Step4 = ({ setData, data, setPage }) => {
   const [creditType, setCreditType] = useState(null);
-
-  const imageData = [
-    {
-      type: "mastercard",
-      src: "https://cdn.vox-cdn.com/thumbor/UKSLdttYoIK2bv1gd231rqL4eiQ=/1400x788/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/13674554/Mastercard_logo.jpg",
-    },
-    {
-      type: "visa",
-      src: "https://www.visa.com.au/dam/VCOM/regional/ve/romania/blogs/hero-image/visa-logo-800x450.jpg",
-    },
-    {
-      type: "amex",
-      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/American_Express_logo_%282018%29.svg/1200px-American_Express_logo_%282018%29.svg.png",
-    },
-    {
-      type: "maestro",
-      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Maestro_logo.png/640px-Maestro_logo.png",
-    },
-  ];
 
   const handleCreditaType = (type) => {
     setCreditType(type);
@@ -53,20 +35,16 @@ const Step4 = ({ setData, data, setPage }) => {
         onChange={(e) => setData({ ...data, cardNumber: e.target.value })}
         className="mb-3 w-full rounded border p-1"
       />
+
       {creditType !== null && (
-        <div className="my-4 flex items-center gap-2">
-          {imageData.map((item) => {
-            return (
-              <img
-                src={item.src}
-                alt={item.type}
-                key={item.type}
-                className={`h-[60px] w-[60px] ${
-                  creditType === item.type ? "opacity-100" : "opacity-50"
-                }`}
-              />
-            );
-          })}
+        <div className="my-3">
+          <img
+            src={imageData[creditType]?.src}
+            alt={imageData[creditType]}
+            className={`h-[60px] w-[60px] opacity-100 ${
+              imageData[creditType]?.src === undefined && "hidden"
+            }`}
+          />
         </div>
       )}
       <div className="flex items-center gap-3">

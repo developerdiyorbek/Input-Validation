@@ -27,39 +27,40 @@ const App = () => {
   });
 
   const Pages = () => {
-    if (page == 0) {
-      return (
-        <Step1 setData={setData} data={data} page={page} setPage={setPage} />
-      );
-    } else if (page === 1) {
-      return (
-        <Step2 setData={setData} data={data} page={page} setPage={setPage} />
-      );
-    } else if (page === 2) {
-      return (
-        <Step3 setData={setData} data={data} page={page} setPage={setPage} />
-      );
-    } else if (page === 3) {
-      return (
-        <Step4 setData={setData} data={data} page={page} setPage={setPage} />
-      );
-    } else if (page === 4) {
-      return (
-        <Step5 setData={setData} data={data} page={page} setPage={setPage} />
-      );
-    } else if (page === 5) {
-      return (
-        <Step6 setData={setData} data={data} page={page} setPage={setPage} />
-      );
+    switch (page) {
+      case 0:
+        return (
+          <Step1 setData={setData} data={data} page={page} setPage={setPage} />
+        );
+      case 1:
+        return (
+          <Step2 setData={setData} data={data} page={page} setPage={setPage} />
+        );
+      case 2:
+        return (
+          <Step3 setData={setData} data={data} page={page} setPage={setPage} />
+        );
+      case 3:
+        return (
+          <Step4 setData={setData} data={data} page={page} setPage={setPage} />
+        );
+      case 4:
+        return (
+          <Step5 setData={setData} data={data} page={page} setPage={setPage} />
+        );
+      case 5:
+        return (
+          <Step6 setData={setData} data={data} page={page} setPage={setPage} />
+        );
     }
   };
 
   return (
     <>
-      <div className="mx-2">
+      <div className="mx-4">
         <Steps page={page} />
 
-        <div className="container  mx-auto mt-6 rounded border  p-[20px] shadow-md">
+        <div className="container max-w-4xl  mx-auto mt-6 rounded border  p-[20px] shadow-md">
           <h1 className="mb-4 text-xl font-bold text-blue-600">
             User Registration Wizard - Step {page + 1}
           </h1>
@@ -91,6 +92,7 @@ const App = () => {
           </div>
         </div>
       </div>
+
       {modal && <Modal setModal={setModal} />}
 
       <ToastContainer />
